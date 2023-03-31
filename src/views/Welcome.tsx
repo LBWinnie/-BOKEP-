@@ -6,8 +6,10 @@ export const Welcome = defineComponent({
   setup: (props, context) => {
     return () => <div class={s.wrapper}>
       <header>
-        <img src={logo} />
-        <h1>山竹记账</h1>
+        <svg>
+          <use xlinkHref='#mangosteen'></use>
+        </svg>
+        <h1>+BOKEP+</h1>
       </header>
       <main class={s.main}>
         <RouterView name="main">
