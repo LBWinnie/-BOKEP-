@@ -17,7 +17,7 @@ export const StartPage = defineComponent({
     return () => (
       <MainLayout>{
         {
-          title: () => '山竹记账',
+          title: () => '+BOKEP+',
           icon: () => <Icon name="menu" class={s.navIcon} onClick={onClickMenu} />,
           default: () => <>
             <Center class={s.pig_wrapper}>
