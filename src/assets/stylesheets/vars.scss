@@ -30,4 +30,11 @@
   --button-bg: white;
   --button-bg-important: var(--navbar-bg-start);
   --button-text-important:white;
+  --input-min-height: 48px;
+  --input-border-color: var(--navbar-bg-start);
+  --input-radius: var(--button-radius);
+  --input-shadow: rgba(0,0,0,0.2);
+  --error-color: var(--navbar-bg-start);
+  --emoji-nav-text: #999;
+  --emoji-nav-text-selected: #333;
 }
