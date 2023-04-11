@@ -36,7 +36,10 @@ export const SignInPage = defineComponent({
         { key: 'code', type: 'required', message: '必填' },
       ]))
       if (!hasError(errors)) {
-        const response = await http.post<{ jwt: string }>('/session', formData)
+        const response = await http.post<{ jwt: string }>('/session', formData, {
+          params: { _mock: 'session' }
+        }).catch(onError)
+        console.log(response)
         localStorage.setItem('jwt', response.data.jwt)
         // router.push('/sign_in?return_to='+ encodeURIComponent(route.fullPath))
         const returnTo = route.query.return_to?.toString()
@@ -70,7 +73,7 @@ export const SignInPage = defineComponent({
             <div class={s.wrapper}>
               <div class={s.logo}>
                 <Icon class={s.icon} name="mangosteen" />
-                <h1 class={s.appName}>山竹记账</h1>
+                <h1 class={s.appName}>+BOKEP+</h1>
               </div>
               <Form onSubmit={onSubmit}>
                 <FormItem label="邮箱地址" type="text"
