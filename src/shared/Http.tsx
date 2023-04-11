@@ -132,7 +132,7 @@ http.instance.interceptors.response.use(
     if (error.response) {
       const axiosError = error as AxiosError;
       if (axiosError.response?.status === 429) {
-        alert("你太频繁了");
+        alert("操作频繁，请稍后再试");
       }
     }
     throw error;
