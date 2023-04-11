@@ -6,6 +6,7 @@ import axios, {
 } from "axios";
 import {
   mockItemCreate,
+  mockItemIndex,
   mockSession,
   mockTagEdit,
   mockTagIndex,
@@ -88,6 +89,9 @@ const mock = (response: AxiosResponse) => {
     case "tagEdit":
       [response.status, response.data] = mockTagEdit(response.config);
       return true;
+    case "itemIndex":
+      [response.status, response.data] = mockItemIndex(response.config);
+      return true;
   }
   return false;
 };
@@ -128,7 +132,7 @@ http.instance.interceptors.response.use(
     if (error.response) {
       const axiosError = error as AxiosError;
       if (axiosError.response?.status === 429) {
-        alert("操作频繁，请稍后再试");
+        alert("你太频繁了");
       }
     }
     throw error;
