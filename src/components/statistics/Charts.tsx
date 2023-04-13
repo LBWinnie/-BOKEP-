@@ -62,6 +62,8 @@ export const Charts = defineComponent({
           happen_before: props.endDate,
           kind: kind.value,
           group_by: "happen_at",
+        },
+        {
           _mock: "itemSummary",
         }
       );
@@ -96,6 +98,8 @@ export const Charts = defineComponent({
           happen_before: props.endDate,
           kind: kind.value,
           group_by: "tag_id",
+        },
+        {
           _mock: "itemSummary",
         }
       );
