@@ -54,7 +54,6 @@ export const SignInPage = defineComponent({
         const response = await http
           .post<{ jwt: string }>("/session", formData)
           .catch(onError);
-        console.log(response);
         localStorage.setItem("jwt", response.data.jwt);
         // router.push('/sign_in?return_to='+ encodeURIComponent(route.fullPath))
         const returnTo = route.query.return_to?.toString();
@@ -86,7 +85,7 @@ export const SignInPage = defineComponent({
             <div class={s.wrapper}>
               <div class={s.logo}>
                 <Icon class={s.icon} name="mangosteen" />
-                <h1 class={s.appName}>+BOKEP+</h1>
+                <h1 class={s.appName}>山竹记账</h1>
               </div>
               <Form onSubmit={onSubmit}>
                 <FormItem
