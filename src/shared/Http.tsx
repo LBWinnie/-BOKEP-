@@ -70,9 +70,10 @@ export class Http {
 
 const mock = (response: AxiosResponse) => {
   if (
-    location.hostname !== "localhost" &&
-    location.hostname !== "127.0.0.1" &&
-    location.hostname !== "192.168.3.57"
+    true ||
+    (location.hostname !== "localhost" &&
+      location.hostname !== "127.0.0.1" &&
+      location.hostname !== "192.168.3.57")
   ) {
     return false;
   }
@@ -163,7 +164,7 @@ http.instance.interceptors.response.use(
     if (error.response) {
       const axiosError = error as AxiosError;
       if (axiosError.response?.status === 429) {
-        alert("你太频繁了");
+        alert("操作频繁，请稍后再试");
       }
     }
     throw error;
